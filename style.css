@@ -1,0 +1,61 @@
+* { box-sizing: border-box; }
+:root {
+  --navy: #101b3f;
+  --blue: #2457e6;
+  --cyan: #52d9f4;
+  --purple: #7754e8;
+  --ink: #17213e;
+  --muted: #66708b;
+  --paper: #f6f8ff;
+}
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: white; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+.hero { min-height: 540px; padding: 24px max(7%, calc((100% - 1120px)/2)); color: white; background: radial-gradient(circle at 80% 30%, #385fe5 0, transparent 30%), linear-gradient(125deg, #101b3f, #202d68 65%, #33216f); position: relative; overflow: hidden; }
+nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; position: relative; z-index: 1; }
+.logo { font-size: 1.2rem; font-weight: 800; letter-spacing: .3px; }
+.nav-links { display: flex; gap: 26px; font-size: .95rem; }
+.nav-links a:hover { color: var(--cyan); }
+.hero-content { max-width: 620px; padding: 88px 0 75px; position: relative; z-index: 1; }
+.eyebrow { color: #5b7cff; font-size: .75rem; font-weight: 800; letter-spacing: 2px; margin: 0 0 10px; }
+.hero .eyebrow { color: var(--cyan); }
+h1 { font-size: clamp(2.8rem, 7vw, 5.2rem); line-height: 1.03; margin: 10px 0 22px; letter-spacing: -2px; }
+h1 span { color: var(--cyan); }
+.intro { color: #dce4ff; font-size: 1.1rem; max-width: 520px; margin-bottom: 30px; }
+.button { display: inline-block; border: 0; border-radius: 999px; padding: 13px 22px; background: var(--cyan); color: #102044; font-weight: 800; cursor: pointer; transition: transform .2s, box-shadow .2s; }
+.button:hover { transform: translateY(-2px); box-shadow: 0 8px 24px #0003; }
+.code-art { position: absolute; right: 9%; top: 170px; width: 230px; height: 230px; border: 2px solid #70e8ff; border-radius: 38px; display: grid; place-items: center; color: var(--cyan); font-size: 5rem; font-weight: 900; transform: rotate(8deg); box-shadow: 0 0 60px #55cfff44, inset 0 0 45px #55cfff22; }
+.section { max-width: 1120px; margin: auto; padding: 82px 7%; }
+h2 { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.15; margin: 0 0 18px; letter-spacing: -1px; }
+.about { display: grid; grid-template-columns: 1.3fr .8fr; gap: 50px; align-items: center; }
+.about > div:first-child p:last-child { color: var(--muted); max-width: 620px; }
+.fact-card { background: #edf3ff; border-radius: 24px; padding: 28px; border: 1px solid #dbe5ff; }
+.big-emoji { font-size: 2.6rem; }
+.fact-card h3 { margin: 8px 0 4px; }
+.fact-card p, .card p { color: var(--muted); margin-bottom: 0; }
+#languages { background: var(--paper); max-width: none; padding-left: max(7%, calc((100% - 1120px)/2)); padding-right: max(7%, calc((100% - 1120px)/2)); }
+.cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 30px; }
+.card { background: white; border: 1px solid #e7eaff; border-radius: 20px; padding: 24px; box-shadow: 0 8px 25px #1b2a5810; }
+.card span { font-size: 2rem; }
+.card h3 { margin: 10px 0 4px; }
+.demo { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; align-items: center; }
+.demo > div:first-child p:last-child { color: var(--muted); }
+.demo-box { padding: 28px; border-radius: 22px; background: var(--navy); color: white; }
+.demo-box code { display: block; padding: 16px; background: #07112d; color: #9cf0ff; border-radius: 10px; margin-bottom: 20px; overflow-wrap: anywhere; }
+.output { min-height: 28px; color: #a9f5d0; margin-bottom: 0; }
+.project-cards { grid-template-columns: repeat(3, 1fr); }
+footer { text-align: center; padding: 28px 15px; background: var(--navy); color: #dce4ff; }
+footer p { margin: 4px; }
+@media (max-width: 760px) {
+  .hero { min-height: auto; }
+  .hero-content { padding: 75px 0 55px; }
+  .code-art { opacity: .18; right: -45px; top: 190px; width: 180px; height: 180px; }
+  .about, .demo { grid-template-columns: 1fr; gap: 25px; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  nav { align-items: flex-start; flex-direction: column; }
+  .nav-links { gap: 16px; font-size: .88rem; }
+  .cards, .project-cards { grid-template-columns: 1fr; }
+  .section { padding-top: 60px; padding-bottom: 60px; }
+}
